@@ -18,7 +18,7 @@ We recommend installing it only as a development dependency.
 
 ```ruby
 group :development do
-  gem 'debugbar', git: 'https://github.com/julienbourdeau/debugbar'
+  gem 'debugbar'
 end
 ```
 
