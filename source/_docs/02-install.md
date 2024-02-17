@@ -12,7 +12,7 @@ seo_description:
 The debugbar is installed like any other gem. Add it to your Gemfile, then run `bundle install` to install it.
 
 ```ruby
-gem 'debugbar', git: 'https://github.com/julienbourdeau/debugbar'
+gem 'debugbar'
 ```
 We recommend installing it only as a development dependency.
 
