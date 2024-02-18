@@ -11,7 +11,7 @@ If you're used to tail the logs, you'll love this feature. It's the same logs, b
 
 In a typical setup, you might have background job running while the frontend just made 3 requests. The logs are all entangled together, and it's hard to find what you're looking for.
 
-**This feature is experimental.** It works but I'd like better filtering, better display and a better way to set it up. For now, this feature is not shown on the demo at the botto of this page.
+**This feature is experimental.** It works but I'd like better filtering, better display and a better way to set it up. For now, this feature is not shown on the demo at the bottom of this page.
 
 {!! $page->screenshot('logs', "Screenshot of logs in the debugbar") !!}
 
