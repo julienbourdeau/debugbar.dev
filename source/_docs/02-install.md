@@ -76,7 +76,7 @@ Make sure the frontend is allowed to connect to ActionCable. You can define the 
 
 ```ruby
 Algolia::Application.configure do
-  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
+  config.action_cable.allowed_request_origins = [%r{http://*}, %r{https://*}]
 end
 ```
 
