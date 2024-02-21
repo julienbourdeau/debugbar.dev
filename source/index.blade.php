@@ -1,5 +1,7 @@
-@extends('_layouts.base')
-
+---
+extends: _layouts.base
+seo_title: "Debugbar: Powerful devtools for Ruby on Rails"
+---
 @section('main')
 
   <div class="py-8 md:py-16">

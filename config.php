@@ -19,6 +19,13 @@ return [
             },
         ],
     ],
+    'getSeoTitle' => function ($page) {
+        if ($page->seo_title) {
+            return $page->seo_title;
+        }
+
+        return $page->title.' | Ruby On Rails Debugbar';
+    },
     'activePage' => function ($page, $section, $mode = 'contains'): bool {
         // $path = ltrim($page->getPath(), '/');
         $path = $page->getPath();

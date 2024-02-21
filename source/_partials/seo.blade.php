@@ -1,5 +1,5 @@
 @php
-  $title = $page->seo_title ?? $page->title;
+  $title = $page->getSeoTitle() ?? $page->title;
   $description = $page->seo_description ?? $page->description;
   $seoGraphImg = url('/assets/debugbar-graph-img.png');
   $canonicalUrl = $page->getUrl();
