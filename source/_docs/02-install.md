@@ -50,7 +50,7 @@ In your layout, make sure the debugbar is rendered via the view helper.
 </html>
 ```
 
-### Without the EBR helper
+### Without the ERB helper
 
 If your application doesn't use the `erb` view helper, you can render the debugbar manually. This can be useful if your frontend is an SPA and the shell isn't rendered by Rails.
 
