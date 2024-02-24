@@ -71,13 +71,58 @@ Debugbar.configure do |config|
 end
 ```
 
+## Changing URL and port
+
+By default, the frontend will connect to localhost:3000. If you use another port or a domain, you need to pass the URL to the frontend.
+
+With the ERB helper, you can pass a hash to override [any configuration defined here](https://github.com/julienbourdeau/debugbar/blob/166e5def8/client/src/models/Config.ts#L3-L11).
+
+```erb
+<%= debugbar_javascript  cable: {url: "something.test:3030"} %>
+```
+
+If you don't use the helper, you must define a `_debugbarConfigOptions` object. 
+
+```js
+window._debugbarConfigOptions = {
+    cable: {
+      url: 'something.test:3030'
+    },
+}
+```
+
+
 ## Using another prefix
 
 All endpoints added by the debugbar are prefixed with `/_debugbar`.
 It's unlikely that you'll need to change the prefix, but if you do, you can set the `prefix` option in the initializer.
 
+If you change it, it also needs to be changed in the frontend configuration
+
 ```ruby
 Debugbar.configure do |config|
   config.prefix = '/custom-prefix'
 end
+```
+
+```ruby
+<%= debugbar_javascript  cable: {prefix: "/custom-prefix"} %>
+```
+
+## Custom default height
+
+If you're working on a fairly big screen, you can configure the default height of the debugbar when it opens.
+Pass a value in pixel.
+
+```erb
+<%= debugbar_javascript  height: 800 %>
+```
+
+Or if you don't use the helper
+
+```js
+window._debugbarConfigOptions = {
+    height: 800,
+}
+
 ```
