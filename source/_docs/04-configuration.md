@@ -74,8 +74,9 @@ end
 ## Changing URL and port
 
 By default, the frontend will connect to localhost:3000. If you use another port or a domain, you need to pass the URL to the frontend.
+If you use http polling, [checkout this page](/docs/polling-mode).
 
-With the ERB helper, you can pass a hash to override [any configuration defined here](https://github.com/julienbourdeau/debugbar/blob/166e5def8/client/src/models/Config.ts#L3-L11).
+With the ERB helper, you can pass a hash to override [any configuration defined here](https://github.com/julienbourdeau/debugbar/blob/166e5def8/client/src/models/Config.ts#L3-L15).
 
 ```erb
 <%= debugbar_javascript  cable: {url: "something.test:3030"} %>
@@ -106,7 +107,7 @@ end
 ```
 
 ```ruby
-<%= debugbar_javascript  cable: {prefix: "/custom-prefix"} %>
+<%= debugbar_javascript  prefix: "/custom-prefix" %>
 ```
 
 ## Custom default height
