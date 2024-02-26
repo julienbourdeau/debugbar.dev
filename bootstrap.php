@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 use TightenCo\Jigsaw\Jigsaw;
 
 /** @var \Illuminate\Container\Container $container */
@@ -19,6 +21,26 @@ if (class_exists("Dotenv\Dotenv")) {
  *     // Your code here
  * });
  */
+
+$events->beforeBuild(function (Jigsaw $jigsaw) {
+    $changelog = Http::get("https://raw.githubusercontent.com/julienbourdeau/debugbar/master/CHANGELOG.md")->body();
+
+    $headers = <<<TEXT
+---
+extends: _layouts.changelog
+section: content
+slug: changelog
+title: Installation
+subtitle: "Setup the Debugbar dev tools in your project"
+seo_title:
+seo_description:
+---
+TEXT;
+
+    $content = $headers ."\n\n". $changelog;
+
+    File::put(__DIR__.'/source/changelog.blade.md', $content);
+});
 
 $events->beforeBuild(function (Jigsaw $jigsaw) {
     $manifest = json_decode(file_get_contents(__DIR__.'/source/assets/debugbar/manifest.json'), true);
