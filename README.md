@@ -1,10 +1,5 @@
 ## Debugbar.dev website
 
----
-
-👉 [https://debugbar.dev](https://debugbar.dev) 👈
-
----
 
 
 This site is built with:
@@ -16,5 +11,10 @@ This site is built with:
 When new changes are pushed to the main branch, a [GitHub Action](.github/workflows/deploy.yml) is triggered to build the site 
 and deploy it to the `static` branch. This branch is then deployed on [CloudFlare Pages](https://pages.cloudflare.com/).
 
+---
+
+👉 [https://debugbar.dev](https://debugbar.dev) 👈
+
+---
 
 [![Hero image](./source/assets/debugbar-graph-img.png?raw=true "The debugbar.dev documentation website")]((https://debugbar.dev))
