@@ -30,16 +30,20 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 extends: _layouts.changelog
 section: content
 slug: changelog
-title: Installation
-subtitle: "Setup the Debugbar dev tools in your project"
-seo_title:
-seo_description:
+title: Changelog
+subtitle: "What's new in Debugbar?"
+seo_title: "Rails Debugbar Changelog"
+seo_description: "All new features, improvements and fixes in Debugbar and more importantly: all the breaking changes!"
 ---
 TEXT;
 
     $content = $headers ."\n\n". $changelog;
 
     File::put(__DIR__.'/source/changelog.blade.md', $content);
+});
+
+$events->afterBuild(function (Jigsaw $jigsaw) {
+    exec('git checkout -- '.__DIR__.'/source/changelog.blade.md');
 });
 
 $events->beforeBuild(function (Jigsaw $jigsaw) {
