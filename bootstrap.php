@@ -47,10 +47,15 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
 });
 
 $events->beforeBuild(function (Jigsaw $jigsaw) {
-    $manifest = json_decode(file_get_contents(__DIR__.'/source/assets/debugbar/manifest.json'), true);
+    $files = glob(__DIR__.'/source/assets/debugbar/*.js');
+
+    if (count($files) !== 1) {
+        echo "\n\nToo many demo files found in source/assets/debugbar\n\n";
+        exit(1);
+    }
 
     $jigsaw->setConfig('debugbarAssets', [
-        'js' => basename($manifest['src/demo.ts']['file']),
+        'js' => basename($files[0]),
     ]);
 });
 

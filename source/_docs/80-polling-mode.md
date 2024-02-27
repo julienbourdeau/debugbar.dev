@@ -10,7 +10,9 @@ seo_description:
 If you cannot use websocket via ActionCable, the debugbar has a fallback mode using HTTP polling. 
 It's not as nice as the websocket, but it works.
 
-If ActionCable isn't found, the debugbar will automatically switch to polling mode.
+If ActionCable isn't found, the debugbar will automatically switch to polling mode (only if using the ERB helper).
+
+It's also possible to pause and resume polling to avoid all those calls in the browser Network tab when debugging.
 
 ## Configuration
 
