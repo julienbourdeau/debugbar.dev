@@ -45,12 +45,12 @@ In your layout, make sure the debugbar is rendered via the view helper.
 <html>
   <head>
     ... 
-    <%= debugbar_head %>
+    <%= debugbar_head %> <!-- [tl! focus] -->
   </head>
     
   <body>
     ...
-    <%= debugbar_body %>
+    <%= debugbar_body %> <!-- [tl! focus] -->
   </body>
 </html>
 ```
@@ -67,12 +67,12 @@ In your `index.html` file, make sure the following code is added:
 <html>
   <head>
     ...
-    <script defer src="/_debugbar/assets/script"></script>
+    <script defer src="/_debugbar/assets/script"></script> <!-- [tl! focus] -->
   </head>
   
   <body>
   
-    <div id="__debugbar" data-turbo-permanent></div>
+    <div id="__debugbar" data-turbo-permanent></div> <!-- [tl! focus] -->
     
     <!-- Optional configuration -->
     <script type="text/javascript" data-turbo-permanent>
@@ -93,7 +93,9 @@ You can define the allowed origins or disable the requet forgery protection in y
 Algolia::Application.configure do
   config.action_cable.disable_request_forgery_protection = true
   # OR
-  # config.action_cable.allowed_request_origins = [%r{http://your-site-here*}, %r{https://your-site-here*}]
+  # config.action_cable.allowed_request_origins = [
+  #   %r{http://your-site-here*}, %r{https://your-site-here*}
+  # ]
 end
 ```
 
