@@ -43,40 +43,57 @@ In your layout, make sure the debugbar is rendered via the view helper.
 ```erb
 <!DOCTYPE html>
 <html>
-    ...
+  <head>
+    ... 
+    <%= debugbar_head %>
+  </head>
     
-    <%= debugbar_javascript %>
+  <body>
+    ...
+    <%= debugbar_body %>
   </body>
 </html>
 ```
 
 ### Without the ERB helper
 
-If your application doesn't use the `erb` view helper, you can render the debugbar manually. This can be useful if your frontend is an SPA and the shell isn't rendered by Rails.
+If your application doesn't use the `erb` view helper, you can render the debugbar manually. 
+This can be useful if your frontend is an SPA and the shell isn't rendered by Rails.
 
 In your `index.html` file, make sure the following code is added:
 
 ```html
-<div id="__debugbar"></div>
-
-<script defer src="/_debugbar/assets/script"></script>
-
-<script type="module">
-  import sheet from '/_debugbar/assets/style' assert { type: 'css' };
-  const debugbar = document.getElementById('__debugbar-shadow-root')
-  debugbar.shadowRoot.adoptedStyleSheets = [sheet];
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    ...
+    <script defer src="/_debugbar/assets/script"></script>
+  </head>
+  
+  <body>
+  
+    <div id="__debugbar" data-turbo-permanent></div>
+    
+    <!-- Optional configuration -->
+    <script type="text/javascript" data-turbo-permanent>
+      window._debugbarConfigOptions = {height: 300} 
+    </script>
+  </body>
+</html>
 ```
 
 Note that if you changed the route prefix in your configuration, you'll need to update the url in the script tag.
 
 ## ActionCable connection
 
-Make sure the frontend is allowed to connect to ActionCable. You can define the allowed origins in your `config/environments/development.rb` file.
+Make sure the frontend is allowed to connect to ActionCable. 
+You can define the allowed origins or disable the requet forgery protection in your `config/environments/development.rb` file.
 
 ```ruby
 Algolia::Application.configure do
-  config.action_cable.allowed_request_origins = [%r{http://*}, %r{https://*}]
+  config.action_cable.disable_request_forgery_protection = true
+  # OR
+  # config.action_cable.allowed_request_origins = [%r{http://your-site-here*}, %r{https://your-site-here*}]
 end
 ```
 

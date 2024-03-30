@@ -79,7 +79,7 @@ If you use http polling, [checkout this page](/docs/polling-mode).
 With the ERB helper, you can pass a hash to override [any configuration defined here](https://github.com/julienbourdeau/debugbar/blob/166e5def8/client/src/models/Config.ts#L3-L15).
 
 ```erb
-<%= debugbar_javascript  cable: {url: "ws://something.test:3030"} %>
+<%= debugbar_body  cable: {url: "ws://something.test:3030"} %>
 ```
 
 If you don't use the helper, you must define a `_debugbarConfigOptions` object. 
@@ -97,7 +97,7 @@ window._debugbarConfigOptions = {
 The configuration requires you to pass the entire URL so if you use SSL locally, so you can to use `wss` instead of `ws`. Us
 
 ```erb
-<%= debugbar_javascript  cable: {url: "wss://localhost:3000"} %>
+<%= debugbar_body  cable: {url: "wss://localhost:3000"} %>
 ```
 
 ```js
@@ -121,8 +121,8 @@ Debugbar.configure do |config|
 end
 ```
 
-```ruby
-<%= debugbar_javascript  prefix: "/custom-prefix" %>
+```erb
+<%= debugbar_body  prefix: "/custom-prefix" %>
 ```
 
 ## Custom default height
@@ -131,7 +131,7 @@ If you're working on a fairly big screen, you can configure the default height o
 Pass a value in pixel.
 
 ```erb
-<%= debugbar_javascript  height: 800 %>
+<%= debugbar_body height: 800 %>
 ```
 
 Or if you don't use the helper

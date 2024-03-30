@@ -35,7 +35,7 @@ If I can't, I'll start with Faraday.
 
 ### Hotwire
 
-I'm not sure yet what there is to do here, but I'm super exited about Hotwire and I'm sure there is tons of value to add there!
+I'm not sure yet what there is to do here, but I'm super excited about Hotwire, and I'm sure there is tons of value to add there!
 
 ### Sidekiq
 
