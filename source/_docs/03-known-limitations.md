@@ -22,9 +22,3 @@ The debugbar only works if you're the only user of the backend. If you have mult
 For example, let's say 2 people are working on the SPA frontend, both using a shared hosted staging environment for the backend. The debugbar will show the data from both users.
 
 I intend to [add this feature](/docs/upcoming-features).
-
-## Missing response data
-
-Today, the Debugbar Rack middleware is inserted after `ActionDispatch::RequestId` so there are situation where the response data is not available when we stop tracking the current request. Typically, if an exception is raised in the controller, the response data is not available.
-
-I'll try to move the middleware much earlier in the stack to fix this, but it comes with its own set of challenges.
