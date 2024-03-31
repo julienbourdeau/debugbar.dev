@@ -112,7 +112,7 @@ Make sure the frontend is allowed to connect to ActionCable.
 You can define the allowed origins or disable the request forgery protection in your `config/environments/development.rb` file.
 
 ```ruby
-Algolia::Application.configure do
+Rails::Application.configure do
   config.action_cable.disable_request_forgery_protection = true
   # OR
   # config.action_cable.allowed_request_origins = [

@@ -25,20 +25,20 @@ end
 
 ## Ignoring requests
 
-Once the debugbar is enabled, every request will be monitored and the debugbar will be displayed. You can ignore some requests by setting the `ignored_request` option in the initializer. This is typically useful to ignore some requests that are not relevant to you.
+Once the debugbar is enabled, every request will be monitored and the debugbar will be displayed. You can ignore some requests by setting the `ignore_request` option in the initializer. This is typically useful to ignore some requests that are not relevant to you.
 
 By default, the debugbar will ignore all requests starting with `/assets` or `/_debugbar`.
 
 ```ruby
 Debugbar.configure do |config|
   # Ignore all requests starting with /admin
-  config.ignored_request = -> (env) { env['PATH_INFO'].start_with? '/admin' }
+  config.ignore_request = -> (env) { env['PATH_INFO'].start_with? '/admin' }
 
   # Only log request to the API
-  config.ignored_request = -> (env) { not env['PATH_INFO'].start_with? '/api/v1' }
+  config.ignore_request = -> (env) { not env['PATH_INFO'].start_with? '/api/v1' }
 
   # Ignore requests to admin, assets and debugbar
-  config.ignored_request = -> (env) do
+  config.ignore_request = -> (env) do
     [Debugbar.config.prefix, "/assets", "/admin"].any? do |pfx|
       env['PATH_INFO'].start_with? pfx
     end
