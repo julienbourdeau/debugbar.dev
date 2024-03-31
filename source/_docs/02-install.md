@@ -86,8 +86,30 @@ Note that if you changed the route prefix in your configuration, you'll need to 
 
 ## ActionCable connection
 
+### Authentication (Connection#connect)
+
+If you are already using ActionCable in your app, you might authenticate users in `ApplicationCable::Connection`.
+Please make sure that debugbar requests are allowed.
+
+Example
+
+```ruby
+module ApplicationCable
+  class Connection < ActionCable::Connection::Base
+    def connect
+      # Allow debugbar requests
+      return if request&.path&.include?("_debugbar")
+
+      # Authenticate the user like you already do
+      # ...
+    end
+  end
+end
+```
+
+### Request forgery protection
 Make sure the frontend is allowed to connect to ActionCable. 
-You can define the allowed origins or disable the requet forgery protection in your `config/environments/development.rb` file.
+You can define the allowed origins or disable the request forgery protection in your `config/environments/development.rb` file.
 
 ```ruby
 Algolia::Application.configure do
