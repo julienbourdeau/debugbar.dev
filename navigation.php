@@ -14,7 +14,7 @@ return [
         'url' => '/changelog',
     ],
     'github' => [
-        'label' => 'Github',
+        'label' => 'GitHub',
         'url' => 'https://github.com/julienbourdeau/debugbar',
         'external' => true,
     ],
