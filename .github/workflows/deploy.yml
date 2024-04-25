@@ -36,7 +36,7 @@ jobs:
       - name: Commit /build_production
         run: |
           git config --global user.email "julien@julienbourdeau.com"
-          git config --global user.name "Github Actions"
+          git config --global user.name "GitHub Actions"
           git add -f build_production
           git commit -m 'Build static site'
 
