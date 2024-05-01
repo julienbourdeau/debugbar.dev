@@ -125,7 +125,9 @@ end
 <%= debugbar_body  prefix: "/custom-prefix" %>
 ```
 
-## Custom default height
+## Debugbar appearance
+
+### Custom default height
 
 If you're working on a fairly big screen, you can configure the default height of the debugbar when it opens.
 Pass a value in pixel.
@@ -134,11 +136,25 @@ Pass a value in pixel.
 <%= debugbar_body height: 800 %>
 ```
 
-Or if you don't use the helper
+### Minimized by default
 
-```js
-window._debugbarConfigOptions = {
-    height: 800,
-}
+If you prefer, the debugbar can load minimized by default, so you just see the little ruby logo at the bottom left of the screen.
 
+```erb
+<%= debugbar_body minimized: true %>
+```
+
+## Frontend configuration without the helper
+
+If you are [not using the ERB view helper](https://debugbar.dev/docs/installation/) to render the debugbar 
+(typically because you have an SPA and the shell isn't rendered by Rails), there are some configuration that will might be missing.
+
+```html
+<script type="text/javascript" data-turbo-permanent>
+  window._debugbarConfigOptions = {
+    activeRecord: {
+      adapter: "pgsql",
+    },
+  }
+</script>
 ```
