@@ -45,12 +45,12 @@ In your layout, make sure the debugbar is rendered via the view helper.
 <html>
   <head>
     ... 
-    <%= debugbar_head %> <!-- [tl! focus] -->
+    <%= debugbar_head  if defined? Debugbar %> <!-- [tl! focus] -->
   </head>
     
   <body>
     ...
-    <%= debugbar_body %> <!-- [tl! focus] -->
+    <%= debugbar_body if defined? Debugbar %> <!-- [tl! focus] -->
   </body>
 </html>
 ```
