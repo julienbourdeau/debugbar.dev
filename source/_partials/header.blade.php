@@ -2,7 +2,7 @@
   <div class="px-2 md:px-0 py-2 flex items-center justify-between">
     {{--  LEFT--}}
     <div>
-      <a href="/" class="text-stone-900">
+      <a href="/" class="text-stone-900 hover:text-orange-600">
         @include('_partials.logo')
       </a>
     </div>

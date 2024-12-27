@@ -1,6 +1,6 @@
 <div class="space-y-1 md:flex md:space-y-0 items-center justify-between flex-row-reverse">
   <p class="text-base text-stone-600">
-    Maintained by <a class="text-stone-600 font-medium" href="https://www.julienbourdeau.com">Julien Bourdeau</a>
+    Maintained by <a class="text-stone-600 hover:text-orange-600 font-bold" href="https://www.julienbourdeau.com">Julien Bourdeau</a>
   </p>
 
   <p class="text-sm text-stone-400">

@@ -84,6 +84,12 @@ In your `index.html` file, make sure the following code is added:
 
 Note that if you changed the route prefix in your configuration, you'll need to update the url in the script tag.
 
+## Puma configuration
+
+**Make sure Puma is running in single mode**! Set `RAILS_MAX_THREADS` to 1 (or `WEB_CONCURRENCY` to 0). 
+Puma cluster mode is [not supported yet](/docs/known-limitations).
+
+
 ## ActionCable connection
 
 ### Authentication (Connection#connect)

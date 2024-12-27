@@ -1,5 +1,5 @@
 <svg
-  class="h-7 fill-current text-current"
+  class="h-8 fill-current text-current"
   viewBox="0 0 31.265896 5.6546535"
   version="1.1"
   id="svg1"

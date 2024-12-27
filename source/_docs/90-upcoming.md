@@ -7,6 +7,10 @@ seo_title:
 seo_description: 
 ---
 
+## Debugbar as a browser extension
+
+I think it's too much hassle to add the debugbar in your frontend. Other tools like Vue Devtools or Rails Panel are browser extensions. I didn't like it initially, but I think it makes a lot of sense.
+
 ## Running the debugbar in production or staging
 
 One of the next feature I want to add is how to run the debugbar in production or staging.

@@ -29,7 +29,7 @@ seo_title: "Debugbar: Powerful devtools for Ruby on Rails"
 {{--            <span class="shimmer"></span>--}}
         </button>
 
-        <a href="/docs/introduction" class="text-sm font-semibold leading-6 text-gray-900">
+        <a href="/docs/introduction" class="text-sm font-semibold leading-6 text-gray-900 hover:text-orange-600">
           Learn more <span aria-hidden="true">→</span>
         </a>
       </div>
