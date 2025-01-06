@@ -6,16 +6,24 @@ return [
         'url' => '/',
     ],
     'docs' => [
-        'label' => 'Documentation',
+        'label' => 'Docs',
+        'title' => 'Documentation',
         'url' => '/docs',
     ],
     'changelog' => [
         'label' => 'Changelog',
+        'title' => "What's new?",
         'url' => '/changelog',
+    ],
+    'updates' => [
+        'label' => 'Updates',
+        'title' => "Stay informed",
+        'url' => '/updates',
     ],
     'github' => [
         'label' => 'GitHub',
-        'url' => 'https://github.com/julienbourdeau/debugbar',
+        'url' => '',
         'external' => true,
+        'icon' => 'github-mark.svg',
     ],
 ];
