@@ -86,8 +86,8 @@ Note that if you changed the route prefix in your configuration, you'll need to 
 
 ## Puma configuration
 
-**Make sure Puma is running in single mode**! Set `RAILS_MAX_THREADS` to 1 (or `WEB_CONCURRENCY` to 0). 
-Puma cluster mode is [not supported yet](/docs/known-limitations).
+**Make sure Puma is running in single mode**! Newer version of rails use single mode by default in dev but if you
+modified it, set `WEB_CONCURRENCY` env var to 0. Puma cluster mode is [not supported yet](/docs/known-limitations).
 
 
 ## ActionCable connection
@@ -114,8 +114,11 @@ end
 ```
 
 ### Request forgery protection
+
 Make sure the frontend is allowed to connect to ActionCable. 
 You can define the allowed origins or disable the request forgery protection in your `config/environments/development.rb` file.
+
+Since v0.4.0, the debugbar will `action_cable.disable_request_forgery_protection` automatically. It's recommended to set it manually tho.
 
 ```ruby
 Rails::Application.configure do
@@ -126,5 +129,3 @@ Rails::Application.configure do
   # ]
 end
 ```
-
-Have a look at your `config/cable.yml` file to ensure you're using a valid adapter.

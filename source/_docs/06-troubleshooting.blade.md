@@ -16,3 +16,8 @@ It might be that 127.0.0.1 doesn't work for you. Try using `localhost` instead. 
 ```erb
 <%= debugbar_body cable: {url: "ws://localhost:3000"} %>
 ```
+
+### Check `cable.yml`
+
+Have a look at your `config/cable.yml` file to ensure everything is correct.
+It happened to me that I wasn't using a valid adapter (don't ask me why).

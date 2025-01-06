@@ -12,14 +12,37 @@ There are a few things you can configure in the Debugbar. The configuration happ
 * in `config/initializers/debugbar.rb` for the general gem configuration
 * in a `script` tag in your page for some specific configuration
 
+### Ensure ruby configuration is only loaded in developement
 
+Because the debugbar should be loaded in other environments, you should ensure the configuration is only loaded in development.
+One solution is to put the configuration directly in `config/environments/development.rb`, underneath the `Rails.application.configure do` block.
+
+```ruby
+Rails.application.configure do
+  # ...
+end
+
+Debugbar.configure do |config|
+  config.enabled = false
+end
+```
+
+If you prefer to have a dedicated initializer, you can wrap the configuration in a `if Rails.env.development?` block or make sure the code is only executed if Debugbar is defined.
+
+```ruby
+return unless defined? Debugbar
+
+Debugbar.configure do |config|
+  config.enabled = true
+end
+```
 ## Enable/disable the Debugbar
 
 You can enable/disable the Debugbar by setting the `enabled` option in the initializer:
 
 ```ruby
 Debugbar.configure do |config|
-  config.enabled = false
+  config.enabled = false # or ENV['DEBUGBAR_ENABLED'] == 'true' for example
 end
 ```
 

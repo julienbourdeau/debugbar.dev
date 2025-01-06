@@ -24,7 +24,7 @@
 
   </div>
 
-  <footer class="mb-6 mx-2 md:mx-4 py-2 lg:mb-16 lg:mx-auto lg:container">
+  <footer class="mb-24 mx-2 md:mx-4 py-2 lg:mx-auto lg:container">
     @include('_partials.footer')
   </footer>
 

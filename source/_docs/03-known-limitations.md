@@ -11,7 +11,7 @@ seo_description:
 
 Currently, the debugbar only support backend running a single process. 
 
-For example with Puma, you must run in _single mode_ (default) and not _cluster mode_! Make sure `RAILS_MAX_THREADS` is set to 1 (or `WEB_CONCURRENCY` set to `0`). You can edit your `config/puma.rb` file to set the number of threads to 1, but it's recommended to rely on the environment variable.
+For example with Puma, you must run in _single mode_ (default) and not _cluster mode_! Make sure `WEB_CONCURRENCY` set to `0`. You can edit your `config/puma.rb` file to set the number of threads to 1, but it's recommended to rely on the environment variable.
 
 See [Upcoming Features](/docs/upcoming-features) section for some technical details.
 
