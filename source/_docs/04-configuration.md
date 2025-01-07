@@ -12,7 +12,7 @@ There are a few things you can configure in the Debugbar. The configuration happ
 * in `config/initializers/debugbar.rb` for the general gem configuration
 * in a `script` tag in your page for some specific configuration
 
-### Ensure ruby configuration is only loaded in developement
+### Ensure ruby configuration is only loaded in development
 
 Because the debugbar should be loaded in other environments, you should ensure the configuration is only loaded in development.
 One solution is to put the configuration directly in `config/environments/development.rb`, underneath the `Rails.application.configure do` block.

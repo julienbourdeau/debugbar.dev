@@ -82,11 +82,28 @@ Note that if you changed the route prefix in your configuration, you'll need to 
 
 ## Puma configuration
 
-**Make sure Puma is running in single mode**! Newer version of rails use single mode by default in dev but if you
-modified it, set `WEB_CONCURRENCY` env var to 0. Puma cluster mode is [not supported yet](/docs/known-limitations).
+**It's recommended to run Puma in single mode**! Rails use single mode by default in dev but if you
+modified it, set `WEB_CONCURRENCY` env var to 0. Puma cluster mode [requires extra configuration](/docs/puma-cluster-mode).
 
 
 ## ActionCable connection
+
+### Request forgery protection
+
+Make sure the frontend is allowed to connect to ActionCable. 
+You can define the allowed origins or disable the request forgery protection in your `config/environments/development.rb` file.
+
+Since v0.4.0, the debugbar will `action_cable.disable_request_forgery_protection` automatically. It's recommended to set it manually tho.
+
+```ruby
+Rails::Application.configure do
+  config.action_cable.disable_request_forgery_protection = true
+  # OR
+  # config.action_cable.allowed_request_origins = [
+  #   %r{http://your-site-here*}, %r{https://your-site-here*}
+  # ]
+end
+```
 
 ### Authentication (Connection#connect)
 
@@ -106,22 +123,5 @@ module ApplicationCable
       # ...
     end
   end
-end
-```
-
-### Request forgery protection
-
-Make sure the frontend is allowed to connect to ActionCable. 
-You can define the allowed origins or disable the request forgery protection in your `config/environments/development.rb` file.
-
-Since v0.4.0, the debugbar will `action_cable.disable_request_forgery_protection` automatically. It's recommended to set it manually tho.
-
-```ruby
-Rails::Application.configure do
-  config.action_cable.disable_request_forgery_protection = true
-  # OR
-  # config.action_cable.allowed_request_origins = [
-  #   %r{http://your-site-here*}, %r{https://your-site-here*}
-  # ]
 end
 ```
