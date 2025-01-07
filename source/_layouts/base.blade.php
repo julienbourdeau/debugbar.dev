@@ -2,7 +2,14 @@
 
 @section('body')
 
-  <div class="mt-6 mx-2 md:mx-4 p-2 md:p-4 lg:mt-10 lg:px-8 lg:mx-auto lg:container bg-white border rounded rounded-tr-xl shadow">
+  <div class="mt-6 lg:mt-8 mb-0.5 mx-2 md:mx-4 px-2 md:px-4 lg:px-8 lg:mb-1 text-right text-sm lg:mx-auto lg:container">
+
+    Current version: <a class="font-bold font-mono hover:text-amber-600" target="_blank" href="https://rubygems.org/gems/debugbar">
+      {{ $page->currentVersion }}
+    </a>
+  </div>
+
+  <div class="mx-2 md:mx-4 p-2 md:p-4 lg:px-8 lg:mx-auto lg:container bg-white border rounded rounded-tr-xl shadow">
 
     <header class="mb-16">
       @include ('_partials.header')

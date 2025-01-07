@@ -11,17 +11,7 @@ if (class_exists("Dotenv\Dotenv")) {
     $dotenv->safeLoad();
 }
 
-/*
- * You can run custom code at different stages of the build process by
- * listening to the 'beforeBuild', 'afterCollections', and 'afterBuild' events.
- *
- * For example:
- *
- * $events->beforeBuild(function (Jigsaw $jigsaw) {
- *     // Your code here
- * });
- */
-
+// Get changelog from the gem source code on github
 $events->beforeBuild(function (Jigsaw $jigsaw) {
     $changelog = Http::get("https://raw.githubusercontent.com/julienbourdeau/debugbar/master/CHANGELOG.md")->body();
 
@@ -42,10 +32,23 @@ TEXT;
     File::put(__DIR__.'/source/changelog.blade.md', $content);
 });
 
+// Reset the changelog file after the build
 $events->afterBuild(function (Jigsaw $jigsaw) {
     exec('git checkout -- '.__DIR__.'/source/changelog.blade.md');
 });
 
+$events->beforeBuild(function (Jigsaw $jigsaw) {
+    $versions = Http::get("https://rubygems.org/api/v1/versions/debugbar.json")->json();
+
+    $current = collect($versions)->first(function ($v) use ($jigsaw) {
+        return $v['prerelease'] == false;
+    });
+
+    $jigsaw->setConfig('currentVersion', $current['number']);
+});
+
+// Load the debugbar for demo
+// generated via `./build_demo.sh` in the debugbar repo
 $events->beforeBuild(function (Jigsaw $jigsaw) {
     $files = glob(__DIR__.'/source/assets/debugbar/*.js');
 
