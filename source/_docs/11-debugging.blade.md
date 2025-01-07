@@ -26,7 +26,7 @@ class SomeController < ApplicationController
 end
 ```
 
-```erbruby
+```erb
 <!-- In a view -->
 <% Debugbar.msg("Rendering navigation") %>
 ```

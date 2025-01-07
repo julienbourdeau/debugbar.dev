@@ -15,6 +15,6 @@ Open this section by clicking on the details **left of the select box**.
 
 {!! $page->screenshot('request', "Screenshot of request details in the debugbar") !!}
 
-The headers are collapsed for clarity but you can expand them.
+The headers are collapsed for clarity, but you can expand them.
 
 {!! $page->screenshot('request-headers', "Screenshot of request headers in the debugbar") !!} 

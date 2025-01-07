@@ -21,21 +21,7 @@ Running the debugbar in production will let you explore your application with re
 Running the debugbar in staging can be useful if you have a frontend SPA and a backend API. The staging is the backend, and you only run the frontend locally.
 
 
-## Support for Puma cluster mode (multi process)
-
-The debugbar is not compatible with Puma cluster mode. This is because the debugbar uses an in-memory buffer to store the data. This buffer is not shared between processes.
-
-Your frontend connects to one process via websocket. If the request is handled by another process, the frontend will not receive the data.
-
-The data will need to be stored in a shared buffer, like Redis.
-
 ## More collectors
-
-### HTTP requests
-
-If you backend makes HTTP requests to other services, it would be nice to see the requests in the debugbar. I'm hoping to be able to reuse come code from `webmock` to support as many HTTP libraries as possible.
-
-If I can't, I'll start with Faraday.
 
 ### Hotwire
 
