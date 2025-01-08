@@ -22,7 +22,7 @@ return [
     ],
     'github' => [
         'label' => 'GitHub',
-        'url' => '',
+        'url' => 'https://github.com/julienbourdeau/debugbar',
         'external' => true,
         'icon' => 'github-mark.svg',
     ],
