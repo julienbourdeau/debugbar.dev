@@ -1,6 +1,6 @@
 ---
 slug: "upcoming-features"
-toc_section: What's next
+toc_section: Advanced
 title: Upcoming features
 subtitle: The features I want to add to the debugbar
 seo_title: 

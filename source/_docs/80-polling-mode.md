@@ -1,6 +1,6 @@
 ---
 slug: "polling-mode"
-toc_section: Misc
+toc_section: Advanced
 title: Using HTTP polling
 subtitle: If you cannot use websocket, you can use http polling, but it's not as nice.
 seo_title:

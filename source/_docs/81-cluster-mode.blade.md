@@ -1,6 +1,6 @@
 ---
 slug: "puma-cluster-mode"
-toc_section: Misc
+toc_section: Advanced
 title: With Puma in cluster mode
 subtitle: If you must use Puma in cluster mode in development, the configuration is a bit more complex.
 seo_title:
