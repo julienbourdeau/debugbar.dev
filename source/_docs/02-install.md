@@ -18,18 +18,6 @@ group :development do
 end
 ```
 
-## Mount the engine
-
-Open your `config/routes.rb` file and add the following line:
-
-```ruby
-if defined? Debugbar
-  mount Debugbar::Engine => Debugbar.config.prefix
-end
-```
-
-This adds a few endpoints to your application. You can change the prefix in the [configuration](/docs/configuration), if the url prefix conflicts with your app. Default prefix is `/_debugbar`.
-
 ## Render the debugbar
 
 ### With the ERB helper
