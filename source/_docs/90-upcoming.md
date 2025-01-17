@@ -23,6 +23,10 @@ Running the debugbar in staging can be useful if you have a frontend SPA and a b
 
 ## More collectors
 
+### GraphQL
+
+Support [graphql ruby](https://graphql-ruby.org/) gem.
+
 ### Hotwire
 
 I'm not sure yet what there is to do here, but I'm super excited about Hotwire, and I'm sure there is tons of value to add there!
