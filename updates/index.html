@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="75x75" href="https://debugbar.dev/assets/favicon.png">
+    <link rel="icon" href="https://debugbar.dev/assets/favicon.svg">
+    <link rel=”mask-icon” href=https://debugbar.dev/assets/favicon.svg color=”#f1f0ee">
+
+    <title>Debugbar: Powerful devtools for Ruby on Rails</title>
+<meta property="og:title" content="Debugbar: Powerful devtools for Ruby on Rails" />
+
+  <meta name="description" content="Rails debugging dev tools for faster development. Inspect your request details (queries, logs, cache, jobs and more).">
+  <meta property="og:description" content="Rails debugging dev tools for faster development. Inspect your request details (queries, logs, cache, jobs and more)." />
+
+<link rel="canonical" href="https://debugbar.dev/updates"/>
+<meta property="og:url" content="https://debugbar.dev/updates" />
+
+<meta name="twitter:creator" content="@julienbourdeau" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="image" content="https://debugbar.dev/assets/debugbar-graph-img.png" />
+  <meta itemprop="image" content="https://debugbar.dev/assets/debugbar-graph-img.png" />
+  <meta name="twitter:image" content="https://debugbar.dev/assets/debugbar-graph-img.png" />
+  <meta property="og:image" content="https://debugbar.dev/assets/debugbar-graph-img.png" />
+
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=8d7d91a7793f12742c303a8b6adba1a5">
+    <script defer src="/assets/build/js/main.js?id=6113dcbee679e6cccaf4837601437a78"></script>
+  </head>
+
+  <body class="bg-almost-white bg-pattern text-stone-900 font-sans antialiased">
+
+    <div class="h-2 bg-gradient-to-r from-transparent from-10% via-orange-200 via-30% to-amber-600 to-90%"></div>
+
+    
+  <div class="mt-6 lg:mt-8 mb-0.5 mx-2 md:mx-4 px-2 md:px-4 lg:px-8 lg:mb-1 text-right text-sm lg:mx-auto lg:container">
+
+    Current version: <a class="font-bold font-mono hover:text-amber-600" target="_blank" href="https://rubygems.org/gems/debugbar">
+      0.4.3
+    </a>
+  </div>
+
+  <div class="mx-2 md:mx-4 p-2 md:p-4 lg:px-8 lg:mx-auto lg:container bg-white border rounded rounded-tr-xl shadow">
+
+    <header class="mb-16">
+      <div x-data="{open: false}" >
+  <div class="px-2 md:px-0 py-2 flex items-center justify-between">
+    
+    <div>
+      <a href="/" class="text-stone-900 hover:text-orange-600">
+        <svg
+  class="h-8 fill-current text-current"
+  viewBox="0 0 31.265896 5.6546535"
+  version="1.1"
+  id="svg1"
+  xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"><defs
+    id="defs1" /><g
+    id="layer1"
+    style="fill:currentColor;stroke:none;stroke-width:1.5"
+    transform="translate(-58.391679,-79.525602)"><path
+      d="m 66.024956,84.280677 q -0.433917,0 -0.703792,-0.291042 -0.264583,-0.291042 -0.264583,-0.788459 v -0.851958 q 0,-0.502709 0.264583,-0.793751 0.264584,-0.291042 0.703792,-0.291042 0.328084,0 0.53975,0.164042 0.211667,0.164042 0.248709,0.4445 h 0.01587 l -0.01058,-0.661458 v -0.846668 h 0.47625 v 3.862919 h -0.47625 v -0.555625 h -0.0053 q -0.03704,0.28575 -0.248709,0.449792 -0.211666,0.15875 -0.53975,0.15875 z m 0.15875,-0.41275 q 0.296334,0 0.465667,-0.185209 0.169334,-0.185208 0.169334,-0.513292 v -0.79375 q 0,-0.328084 -0.169334,-0.513292 -0.169333,-0.185209 -0.465667,-0.185209 -0.301625,0 -0.47625,0.179917 -0.174625,0.179917 -0.174625,0.518584 v 0.79375 q 0,0.338667 0.174625,0.518584 0.174625,0.179917 0.47625,0.179917 z m 3.185588,0.41275 q -0.343959,0 -0.603251,-0.137583 -0.254,-0.137584 -0.396875,-0.386292 -0.137583,-0.254 -0.137583,-0.587376 v -0.79375 q 0,-0.338667 0.137583,-0.587375 0.142875,-0.248709 0.396875,-0.386292 0.259292,-0.137584 0.603251,-0.137584 0.343958,0 0.597958,0.137584 0.259292,0.137583 0.396876,0.386292 0.142875,0.248708 0.142875,0.587375 v 0.513292 h -1.809751 v 0.280458 q 0,0.343959 0.174625,0.529167 0.174625,0.179917 0.497417,0.179917 0.275166,0 0.4445,-0.09525 0.169333,-0.100542 0.206375,-0.296333 h 0.47625 q -0.04762,0.365125 -0.359833,0.582083 -0.306917,0.211667 -0.767292,0.211667 z m -0.672042,-1.751543 h 1.344084 v -0.153458 q 0,-0.343959 -0.174625,-0.529167 -0.169334,-0.185209 -0.497417,-0.185209 -0.322792,0 -0.497417,0.185209 -0.174625,0.185208 -0.174625,0.529167 z m 4.016379,1.751543 q -0.328083,0 -0.53975,-0.15875 -0.211667,-0.164042 -0.248709,-0.449792 h -0.0053 V 84.22776 H 71.44363 v -3.862919 h 0.476251 v 0.846668 l -0.01058,0.661458 h 0.01588 q 0.03704,-0.280458 0.248709,-0.4445 0.211667,-0.164042 0.53975,-0.164042 0.439209,0 0.703792,0.291042 0.264584,0.291042 0.264584,0.793751 v 0.851958 q 0,0.497417 -0.264584,0.788459 -0.264583,0.291042 -0.703792,0.291042 z m -0.15875,-0.41275 q 0.301625,0 0.47625,-0.179917 0.174625,-0.179917 0.174625,-0.518584 v -0.79375 q 0,-0.338667 -0.174625,-0.518584 -0.174625,-0.179917 -0.47625,-0.179917 -0.291042,0 -0.465667,0.185209 -0.169333,0.185208 -0.169333,0.513292 v 0.79375 q 0,0.328084 0.169333,0.513292 0.174625,0.185209 0.465667,0.185209 z m 3.159129,0.41275 q -0.502709,0 -0.804334,-0.296333 -0.301625,-0.301626 -0.301625,-0.814918 v -1.852084 h 0.47625 v 1.852084 q 0,0.328084 0.169334,0.513292 0.169333,0.179917 0.460375,0.179917 0.296333,0 0.465667,-0.179917 0.174625,-0.185208 0.174625,-0.513292 v -1.852084 h 0.47625 v 1.852084 q 0,0.513292 -0.306917,0.814918 -0.306916,0.296333 -0.809625,0.296333 z m 2.444754,0.899584 v -0.433917 h 0.926042 q 0.428625,0 0.428625,-0.41275 v -0.370417 l 0.01058,-0.529167 h -0.01058 q -0.02646,0.280458 -0.238125,0.4445 -0.206375,0.164042 -0.534459,0.164042 -0.449792,0 -0.709084,-0.291042 -0.259291,-0.296333 -0.259291,-0.79375 v -0.613834 q 0,-0.497417 0.259291,-0.788459 0.259292,-0.291042 0.709084,-0.291042 0.328084,0 0.534459,0.164042 0.211667,0.164042 0.238125,0.4445 h 0.0053 v -0.555625 h 0.470958 v 3.016252 q 0,0.391583 -0.243417,0.619125 -0.238125,0.227542 -0.66675,0.227542 z m 0.724958,-1.550459 q 0.296334,0 0.465667,-0.185209 0.169334,-0.185208 0.169334,-0.513292 v -0.555625 q 0,-0.328084 -0.169334,-0.513292 -0.169333,-0.185209 -0.465667,-0.185209 -0.301625,0 -0.470958,0.179917 -0.164042,0.179917 -0.164042,0.518584 v 0.555625 q 0,0.338667 0.164042,0.518584 0.169333,0.179917 0.470958,0.179917 z m 3.354921,0.650875 q -0.328083,0 -0.53975,-0.15875 -0.211667,-0.164042 -0.248709,-0.449792 h -0.0053 v 0.555625 h -0.476251 v -3.862919 h 0.476251 v 0.846668 l -0.01058,0.661458 h 0.01587 q 0.03704,-0.280458 0.248709,-0.4445 0.211667,-0.164042 0.53975,-0.164042 0.439209,0 0.703792,0.291042 0.264584,0.291042 0.264584,0.793751 v 0.851958 q 0,0.497417 -0.264584,0.788459 -0.264583,0.291042 -0.703792,0.291042 z m -0.15875,-0.41275 q 0.301625,0 0.47625,-0.179917 0.174625,-0.179917 0.174625,-0.518584 v -0.79375 q 0,-0.338667 -0.174625,-0.518584 -0.174625,-0.179917 -0.47625,-0.179917 -0.291042,0 -0.465667,0.185209 -0.169333,0.185208 -0.169333,0.513292 v 0.79375 q 0,0.328084 0.169333,0.513292 0.174625,0.185209 0.465667,0.185209 z m 2.91042,0.41275 q -0.460375,0 -0.724958,-0.232833 -0.264584,-0.238126 -0.264584,-0.640293 0,-0.407458 0.264584,-0.640292 0.264583,-0.232833 0.714375,-0.232833 h 0.899584 v -0.291042 q 0,-0.264583 -0.164042,-0.41275 -0.15875,-0.148167 -0.4445,-0.148167 -0.254,0 -0.428625,0.111125 -0.174625,0.111125 -0.216959,0.291042 h -0.47625 q 0.02646,-0.243417 0.174625,-0.428625 0.153458,-0.185209 0.396875,-0.28575 0.248709,-0.105834 0.550334,-0.105834 0.502709,0 0.79375,0.259292 0.291042,0.259292 0.291042,0.703792 v 2.000251 h -0.465667 v -0.555625 h -0.0053 q -0.03175,0.280458 -0.275167,0.4445 -0.238125,0.164042 -0.619126,0.164042 z m 0.116417,-0.375709 q 0.338667,0 0.555626,-0.169333 0.216958,-0.169333 0.216958,-0.433917 v -0.41275 h -0.889001 q -0.238125,0 -0.375708,0.132292 -0.137584,0.132291 -0.137584,0.359833 0,0.243417 0.164042,0.386292 0.169334,0.137583 0.465667,0.137583 z m 2.30188,0.322792 v -2.910418 h 0.47625 v 0.555625 h 0.0053 q 0.03704,-0.291042 0.238125,-0.449792 0.201083,-0.15875 0.534458,-0.15875 0.455084,0 0.724959,0.291042 0.269875,0.28575 0.269875,0.777876 v 0.201083 h -0.47625 v -0.15875 q 0,-0.333375 -0.169333,-0.513292 -0.169334,-0.185209 -0.492126,-0.185209 -0.635,0 -0.635,0.698501 v 1.852084 z"
+      id="text1"
+      style="font-size:5.29167px;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:0.264583"
+      aria-label="debugbar" /><g
+      style="fill:none;stroke:currentColor;stroke-width:1.5"
+      id="g3"
+      transform="matrix(0.26458333,0,0,0.26458333,57.399491,79.128727)"><path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M 19.5,14.25 V 11.625 A 3.375,3.375 0 0 0 16.125,8.25 h -1.5 A 1.125,1.125 0 0 1 13.5,7.125 v -1.5 A 3.375,3.375 0 0 0 10.125,2.25 H 8.25 m 6.75,12 H 9 m 1.5,-12 H 5.625 C 5.004,2.25 4.5,2.754 4.5,3.375 v 17.25 c 0,0.621 0.504,1.125 1.125,1.125 h 12.75 c 0.621,0 1.125,-0.504 1.125,-1.125 V 11.25 a 9,9 0 0 0 -9,-9 z"
+        id="path1" /></g></g></svg>
+      </a>
+    </div>
+
+    
+
+    
+    <div class="-mr-2 flex items-center md:hidden">
+      <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+        <svg x-show="!open" class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg x-show="open" class="h-6 w-6" style="display:none;" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    
+    <div class="hidden py-3 md:flex items-center space-x-8 font-semibold">
+              <a href="/"
+           title=""
+           class="inline-flex items-center gap-x-1.5 hover:text-orange-600" >
+          Home
+
+                  </a>
+              <a href="/docs"
+           title="Documentation"
+           class="inline-flex items-center gap-x-1.5 hover:text-orange-600" >
+          Docs
+
+                  </a>
+              <a href="/changelog"
+           title="What&#039;s new?"
+           class="inline-flex items-center gap-x-1.5 hover:text-orange-600" >
+          Changelog
+
+                  </a>
+              <a href="/updates"
+           title="Stay informed"
+           class="inline-flex items-center gap-x-1.5 hover:text-orange-600" >
+          Updates
+
+                  </a>
+              <a href="https://github.com/julienbourdeau/debugbar"
+           title=""
+           class="inline-flex items-center gap-x-1.5 hover:text-orange-600"  target="_blank" >
+          GitHub
+
+                      <svg class="-ml-0.5 size-4" data-slot="icon" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"></path>
+              <path d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"></path>
+            </svg>
+                  </a>
+          </div>
+  </div>
+
+  
+  <div x-show="open" @click.away="open = false" class="md:hidden shadow-lg" style="display: none;">
+    <div class="block pt-2 pb-3">
+              <a href="/"
+           class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium  transition duration-150 ease-in-out hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-stone-800 focus:bg-stone-50 focus:border-stone-300"
+                   >
+          <div class="inline-flex items-center gap-x-1.5">
+            Home
+
+                      </div>
+        </a>
+              <a href="/docs"
+           class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium  transition duration-150 ease-in-out hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-stone-800 focus:bg-stone-50 focus:border-stone-300"
+                   >
+          <div class="inline-flex items-center gap-x-1.5">
+            Docs
+
+                      </div>
+        </a>
+              <a href="/changelog"
+           class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium  transition duration-150 ease-in-out hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-stone-800 focus:bg-stone-50 focus:border-stone-300"
+                   >
+          <div class="inline-flex items-center gap-x-1.5">
+            Changelog
+
+                      </div>
+        </a>
+              <a href="/updates"
+           class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium  transition duration-150 ease-in-out hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-stone-800 focus:bg-stone-50 focus:border-stone-300"
+                   >
+          <div class="inline-flex items-center gap-x-1.5">
+            Updates
+
+                      </div>
+        </a>
+              <a href="https://github.com/julienbourdeau/debugbar"
+           class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium  transition duration-150 ease-in-out hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-stone-800 focus:bg-stone-50 focus:border-stone-300"
+            target="_blank"         >
+          <div class="inline-flex items-center gap-x-1.5">
+            GitHub
+
+                          <svg class="-ml-0.5 size-4" data-slot="icon" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"></path>
+                <path d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"></path>
+              </svg>
+                      </div>
+        </a>
+          </div>
+  </div>
+</div>
+    </header>
+
+    <div class="main-section mb-24">
+
+      <div>
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl md:-top-80" aria-hidden="true">
+          <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-stone-800 to-red-400 opacity-10 md:left-[calc(50%-30rem)] md:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+
+        <div>
+          
+<div class="py-8 md:py-16">
+
+    <aside class="flex justify-center mb-12 mx-2 md:mx-4 lg:mb-24 lg:mx-auto lg:container">
+      <div class="shadow rounded-md border-2 border-stone-200">
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<form action="https://app.kit.com/forms/7538481/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="7538481" data-uid="9188a13de6" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800" style="background-color: rgb(241, 240, 238); border-radius: 2px;"><div class="formkit-background" style="opacity: 0;"></div><div data-style="minimal"><div class="formkit-header" data-element="header" style="color: rgb(77, 77, 77); font-size: 27px; font-weight: 700;"><h2>Stay in the loop</h2></div><div class="formkit-subheader" data-element="subheader" style="color: rgb(104, 104, 104); font-size: 18px;"><p>There are exciting stuff to come! Occasionally, I send emails about the most interesting releases. Expect 2 to 3 a year at the most.</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(28, 25, 23); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Subscribe</span></button></div><div class="formkit-guarantee" data-element="guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400;"><p>I won't send you spam. Unsubscribe at any time.</p></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a></div></div><style>.formkit-form[data-uid="9188a13de6"] *{box-sizing:border-box;}.formkit-form[data-uid="9188a13de6"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="9188a13de6"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="9188a13de6"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="9188a13de6"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="9188a13de6"] h1,.formkit-form[data-uid="9188a13de6"] h2,.formkit-form[data-uid="9188a13de6"] h3,.formkit-form[data-uid="9188a13de6"] h4,.formkit-form[data-uid="9188a13de6"] h5,.formkit-form[data-uid="9188a13de6"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="9188a13de6"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="9188a13de6"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="9188a13de6"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="9188a13de6"] ol:not([template-default]),.formkit-form[data-uid="9188a13de6"] ul:not([template-default]),.formkit-form[data-uid="9188a13de6"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="9188a13de6"] p:not([template-default]),.formkit-form[data-uid="9188a13de6"] hr:not([template-default]),.formkit-form[data-uid="9188a13de6"] blockquote:not([template-default]),.formkit-form[data-uid="9188a13de6"] ol:not([template-default]),.formkit-form[data-uid="9188a13de6"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="9188a13de6"] .ordered-list,.formkit-form[data-uid="9188a13de6"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="9188a13de6"] .list-item{padding-left:0;}.formkit-form[data-uid="9188a13de6"][data-format="modal"]{display:none;}.formkit-form[data-uid="9188a13de6"][data-format="slide in"]{display:none;}.formkit-form[data-uid="9188a13de6"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="9188a13de6"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="9188a13de6"] .formkit-input,.formkit-form[data-uid="9188a13de6"] .formkit-select,.formkit-form[data-uid="9188a13de6"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="9188a13de6"] .formkit-button,.formkit-form[data-uid="9188a13de6"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="9188a13de6"] .formkit-button:hover,.formkit-form[data-uid="9188a13de6"] .formkit-submit:hover,.formkit-form[data-uid="9188a13de6"] .formkit-button:focus,.formkit-form[data-uid="9188a13de6"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="9188a13de6"] .formkit-button:hover > span,.formkit-form[data-uid="9188a13de6"] .formkit-submit:hover > span,.formkit-form[data-uid="9188a13de6"] .formkit-button:focus > span,.formkit-form[data-uid="9188a13de6"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="9188a13de6"] .formkit-button > span,.formkit-form[data-uid="9188a13de6"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="9188a13de6"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="9188a13de6"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="9188a13de6"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="9188a13de6"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="9188a13de6"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="9188a13de6"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="9188a13de6"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="9188a13de6"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="9188a13de6"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="9188a13de6"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="9188a13de6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="9188a13de6"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="9188a13de6"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="9188a13de6"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="9188a13de6"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="9188a13de6"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="9188a13de6"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-9188a13de6- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-9188a13de6- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="9188a13de6"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="9188a13de6"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="9188a13de6"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="9188a13de6"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;margin:10px 0;position:relative;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border-radius:9px;color:#3d3d3d;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:157px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='133' height='36' viewBox='0 0 133 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.861 25.5C0.735 25.5 0.651 25.416 0.651 25.29V10.548C0.651 10.422 0.735 10.338 0.861 10.338H6.279C9.072 10.338 10.668 11.451 10.668 13.824C10.668 15.819 9.219 16.932 8.001 17.226C7.707 17.268 7.707 17.625 8.022 17.688C9.912 18.108 11.088 19.116 11.088 21.321C11.088 23.715 9.429 25.5 6.426 25.5H0.861ZM5.397 23.085C6.825 23.085 7.518 22.224 7.518 21.006C7.518 19.683 6.825 18.948 5.397 18.948H4.2V23.085H5.397ZM5.313 16.617C6.51 16.617 7.245 15.945 7.245 14.601C7.245 13.383 6.51 12.753 5.25 12.753H4.2V16.617H5.313ZM17.9758 23.883C17.9758 23.568 17.6608 23.505 17.5348 23.799C17.0308 24.954 16.1698 25.731 14.5528 25.731C12.8728 25.731 12.0958 24.471 12.0958 22.707V14.937C12.0958 14.811 12.1798 14.727 12.3058 14.727H15.2248C15.3508 14.727 15.4348 14.811 15.4348 14.937V21.657C15.4348 22.581 15.7708 23.022 16.4638 23.022C17.1778 23.022 17.6188 22.581 17.6188 21.657V14.937C17.6188 14.811 17.7028 14.727 17.8288 14.727H20.7478C20.8738 14.727 20.9578 14.811 20.9578 14.937V25.29C20.9578 25.416 20.8738 25.5 20.7478 25.5H18.1858C18.0598 25.5 17.9758 25.416 17.9758 25.29V23.883ZM25.6141 25.29C25.6141 25.416 25.5301 25.5 25.4041 25.5H22.4851C22.3591 25.5 22.2751 25.416 22.2751 25.29V14.937C22.2751 14.811 22.3591 14.727 22.4851 14.727H25.4041C25.5301 14.727 25.6141 14.811 25.6141 14.937V25.29ZM23.9131 13.74C22.8001 13.74 22.0441 12.942 22.0441 11.934C22.0441 10.926 22.8001 10.107 23.9131 10.107C25.0051 10.107 25.7611 10.926 25.7611 11.934C25.7611 12.942 25.0051 13.74 23.9131 13.74ZM26.7883 10.548C26.7883 10.422 26.8723 10.338 26.9983 10.338H29.9173C30.0433 10.338 30.1273 10.422 30.1273 10.548V22.056C30.1273 22.749 30.2533 23.085 30.8203 23.085C31.0093 23.085 31.1983 23.043 31.3663 23.001C31.5133 22.959 31.6183 22.959 31.6183 23.127V25.059C31.6183 25.164 31.5763 25.269 31.4923 25.311C30.9673 25.521 30.2953 25.71 29.5813 25.71C27.7123 25.71 26.7883 24.639 26.7883 22.476V10.548ZM32.4237 14.727C32.8227 14.727 32.9277 14.538 32.9697 14.055L33.1167 12.039C33.1167 11.913 33.2217 11.829 33.3477 11.829H35.8887C36.0147 11.829 36.0987 11.913 36.0987 12.039V14.517C36.0987 14.643 36.1827 14.727 36.3087 14.727H38.2827C38.4087 14.727 38.4927 14.811 38.4927 14.937V16.659C38.4927 16.785 38.4087 16.869 38.2827 16.869H36.0777V22.056C36.0777 22.875 36.5397 23.085 37.0647 23.085C37.4847 23.085 37.9467 22.938 38.3247 22.707C38.4717 22.623 38.5767 22.665 38.5767 22.833V24.828C38.5767 24.933 38.5347 25.017 38.4507 25.08C37.8417 25.458 36.9807 25.71 36.0357 25.71C34.2927 25.71 32.7387 24.912 32.7387 22.476V16.869H31.8567C31.7307 16.869 31.6467 16.785 31.6467 16.659V14.937C31.6467 14.811 31.7307 14.727 31.8567 14.727H32.4237ZM51.3808 14.727C51.5068 14.727 51.5908 14.79 51.6118 14.916L52.3888 19.851L52.5778 21.174C52.6198 21.468 52.9558 21.468 52.9768 21.174C53.0398 20.712 53.0818 20.271 53.1658 19.83L53.8798 14.916C53.9008 14.79 53.9848 14.727 54.1108 14.727H56.6728C56.8198 14.727 56.8828 14.811 56.8618 14.958L54.6778 25.311C54.6568 25.437 54.5728 25.5 54.4468 25.5H51.3178C51.1918 25.5 51.1078 25.437 51.0868 25.311L50.1208 20.082L49.8898 18.633C49.8688 18.444 49.6588 18.444 49.6378 18.633L49.4068 20.103L48.5458 25.311C48.5248 25.437 48.4408 25.5 48.3148 25.5H45.2068C45.0808 25.5 44.9968 25.437 44.9758 25.311L42.8128 14.958C42.7918 14.811 42.8548 14.727 43.0018 14.727H45.9628C46.0888 14.727 46.1728 14.79 46.1938 14.916L46.9288 19.83C47.0128 20.271 47.0758 20.754 47.1388 21.195C47.2018 21.51 47.4748 21.531 47.5378 21.195L47.7478 19.872L48.6088 14.916C48.6298 14.79 48.7138 14.727 48.8398 14.727H51.3808ZM61.1582 25.29C61.1582 25.416 61.0742 25.5 60.9482 25.5H58.0292C57.9032 25.5 57.8192 25.416 57.8192 25.29V14.937C57.8192 14.811 57.9032 14.727 58.0292 14.727H60.9482C61.0742 14.727 61.1582 14.811 61.1582 14.937V25.29ZM59.4572 13.74C58.3442 13.74 57.5882 12.942 57.5882 11.934C57.5882 10.926 58.3442 10.107 59.4572 10.107C60.5492 10.107 61.3052 10.926 61.3052 11.934C61.3052 12.942 60.5492 13.74 59.4572 13.74ZM62.8154 14.727C63.2144 14.727 63.3194 14.538 63.3614 14.055L63.5084 12.039C63.5084 11.913 63.6134 11.829 63.7394 11.829H66.2804C66.4064 11.829 66.4904 11.913 66.4904 12.039V14.517C66.4904 14.643 66.5744 14.727 66.7004 14.727H68.6744C68.8004 14.727 68.8844 14.811 68.8844 14.937V16.659C68.8844 16.785 68.8004 16.869 68.6744 16.869H66.4694V22.056C66.4694 22.875 66.9314 23.085 67.4564 23.085C67.8764 23.085 68.3384 22.938 68.7164 22.707C68.8634 22.623 68.9684 22.665 68.9684 22.833V24.828C68.9684 24.933 68.9264 25.017 68.8424 25.08C68.2334 25.458 67.3724 25.71 66.4274 25.71C64.6844 25.71 63.1304 24.912 63.1304 22.476V16.869H62.2484C62.1224 16.869 62.0384 16.785 62.0384 16.659V14.937C62.0384 14.811 62.1224 14.727 62.2484 14.727H62.8154ZM73.4298 16.323C73.4298 16.638 73.7868 16.68 73.9128 16.407C74.3748 15.315 75.1308 14.496 76.6008 14.496C78.2178 14.496 78.9528 15.609 78.9528 17.373V25.29C78.9528 25.416 78.8688 25.5 78.7428 25.5H75.8238C75.6978 25.5 75.6138 25.416 75.6138 25.29V18.633C75.6138 17.709 75.2778 17.268 74.5848 17.268C73.8708 17.268 73.4298 17.709 73.4298 18.633V25.29C73.4298 25.416 73.3458 25.5 73.2198 25.5H70.3008C70.1748 25.5 70.0908 25.416 70.0908 25.29V10.548C70.0908 10.422 70.1748 10.338 70.3008 10.338H73.2198C73.3458 10.338 73.4298 10.422 73.4298 10.548V16.323Z' fill='%231E1E1E'/%3E%3Cpath d='M100.132 16.3203C105.58 17.3761 107.272 22.4211 107.318 27.4961C107.318 27.6101 107.226 27.7041 107.112 27.7041H100.252C100.138 27.7041 100.046 27.6121 100.046 27.5001C100.026 23.5629 99.3877 20.0896 95.4865 19.9396C95.3705 19.9356 95.2725 20.0276 95.2725 20.1456V27.5001C95.2725 27.6141 95.1806 27.7061 95.0666 27.7061H88.206C88.092 27.7061 88 27.6141 88 27.5001V8.75585C88 8.64187 88.092 8.54989 88.206 8.54989H95.0686C95.1826 8.54989 95.2745 8.64187 95.2745 8.75585V15.7764C95.2745 15.8804 95.3585 15.9644 95.4625 15.9644C95.5445 15.9644 95.6185 15.9104 95.6425 15.8324C97.4081 10.0416 100.709 8.58588 106.07 8.55189C106.184 8.55189 106.276 8.64387 106.276 8.75785V15.7604C106.276 15.8744 106.184 15.9664 106.07 15.9664H100.166C100.066 15.9664 99.9856 16.0464 99.9856 16.1464C99.9856 16.2304 100.048 16.3043 100.132 16.3203ZM118.918 20.7095V16.1704C118.918 16.0564 119.01 15.9644 119.124 15.9644H124.173C124.273 15.9644 124.353 15.8844 124.353 15.7844C124.353 15.6985 124.291 15.6245 124.207 15.6085C120.256 14.8246 118.432 12.5511 118.37 8.75585C118.368 8.64387 118.458 8.54989 118.572 8.54989H125.986C126.1 8.54989 126.192 8.64187 126.192 8.75585V11.9532C126.192 12.0672 126.284 12.1592 126.398 12.1592H130.649C130.763 12.1592 130.855 12.2511 130.855 12.3651V15.7624C130.855 15.8764 130.763 15.9684 130.649 15.9684H126.398C126.284 15.9684 126.192 16.0604 126.192 16.1744V19.8356C126.192 21.1294 126.986 21.5553 128.04 21.5553C129.692 21.5553 131.323 20.8114 131.977 20.4735C132.113 20.4035 132.277 20.5015 132.277 20.6555V26.3543C132.277 26.5063 132.193 26.6463 132.059 26.7183C131.413 27.0582 129.418 28 127.136 28C122.435 27.996 118.918 26.0824 118.918 20.7095ZM109.266 27.4981V16.1704C109.266 16.0564 109.358 15.9644 109.472 15.9644H116.334C116.448 15.9644 116.54 16.0564 116.54 16.1704V27.4981C116.54 27.6121 116.448 27.7041 116.334 27.7041H109.472C109.358 27.7021 109.266 27.6101 109.266 27.4981ZM108.876 11.4913C108.876 13.4189 110.238 14.9826 112.853 14.9826C115.469 14.9826 116.83 13.4189 116.83 11.4913C116.83 9.56369 115.471 8 112.853 8C110.238 8 108.876 9.56369 108.876 11.4913Z' fill='%231E1E1E'/%3E%3C/svg%3E");}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:133px;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='133' height='36' viewBox='0 0 133 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.861 25.5C0.735 25.5 0.651 25.416 0.651 25.29V10.548C0.651 10.422 0.735 10.338 0.861 10.338H6.279C9.072 10.338 10.668 11.451 10.668 13.824C10.668 15.819 9.219 16.932 8.001 17.226C7.707 17.268 7.707 17.625 8.022 17.688C9.912 18.108 11.088 19.116 11.088 21.321C11.088 23.715 9.429 25.5 6.426 25.5H0.861ZM5.397 23.085C6.825 23.085 7.518 22.224 7.518 21.006C7.518 19.683 6.825 18.948 5.397 18.948H4.2V23.085H5.397ZM5.313 16.617C6.51 16.617 7.245 15.945 7.245 14.601C7.245 13.383 6.51 12.753 5.25 12.753H4.2V16.617H5.313ZM17.9758 23.883C17.9758 23.568 17.6608 23.505 17.5348 23.799C17.0308 24.954 16.1698 25.731 14.5528 25.731C12.8728 25.731 12.0958 24.471 12.0958 22.707V14.937C12.0958 14.811 12.1798 14.727 12.3058 14.727H15.2248C15.3508 14.727 15.4348 14.811 15.4348 14.937V21.657C15.4348 22.581 15.7708 23.022 16.4638 23.022C17.1778 23.022 17.6188 22.581 17.6188 21.657V14.937C17.6188 14.811 17.7028 14.727 17.8288 14.727H20.7478C20.8738 14.727 20.9578 14.811 20.9578 14.937V25.29C20.9578 25.416 20.8738 25.5 20.7478 25.5H18.1858C18.0598 25.5 17.9758 25.416 17.9758 25.29V23.883ZM25.6141 25.29C25.6141 25.416 25.5301 25.5 25.4041 25.5H22.4851C22.3591 25.5 22.2751 25.416 22.2751 25.29V14.937C22.2751 14.811 22.3591 14.727 22.4851 14.727H25.4041C25.5301 14.727 25.6141 14.811 25.6141 14.937V25.29ZM23.9131 13.74C22.8001 13.74 22.0441 12.942 22.0441 11.934C22.0441 10.926 22.8001 10.107 23.9131 10.107C25.0051 10.107 25.7611 10.926 25.7611 11.934C25.7611 12.942 25.0051 13.74 23.9131 13.74ZM26.7883 10.548C26.7883 10.422 26.8723 10.338 26.9983 10.338H29.9173C30.0433 10.338 30.1273 10.422 30.1273 10.548V22.056C30.1273 22.749 30.2533 23.085 30.8203 23.085C31.0093 23.085 31.1983 23.043 31.3663 23.001C31.5133 22.959 31.6183 22.959 31.6183 23.127V25.059C31.6183 25.164 31.5763 25.269 31.4923 25.311C30.9673 25.521 30.2953 25.71 29.5813 25.71C27.7123 25.71 26.7883 24.639 26.7883 22.476V10.548ZM32.4237 14.727C32.8227 14.727 32.9277 14.538 32.9697 14.055L33.1167 12.039C33.1167 11.913 33.2217 11.829 33.3477 11.829H35.8887C36.0147 11.829 36.0987 11.913 36.0987 12.039V14.517C36.0987 14.643 36.1827 14.727 36.3087 14.727H38.2827C38.4087 14.727 38.4927 14.811 38.4927 14.937V16.659C38.4927 16.785 38.4087 16.869 38.2827 16.869H36.0777V22.056C36.0777 22.875 36.5397 23.085 37.0647 23.085C37.4847 23.085 37.9467 22.938 38.3247 22.707C38.4717 22.623 38.5767 22.665 38.5767 22.833V24.828C38.5767 24.933 38.5347 25.017 38.4507 25.08C37.8417 25.458 36.9807 25.71 36.0357 25.71C34.2927 25.71 32.7387 24.912 32.7387 22.476V16.869H31.8567C31.7307 16.869 31.6467 16.785 31.6467 16.659V14.937C31.6467 14.811 31.7307 14.727 31.8567 14.727H32.4237ZM51.3808 14.727C51.5068 14.727 51.5908 14.79 51.6118 14.916L52.3888 19.851L52.5778 21.174C52.6198 21.468 52.9558 21.468 52.9768 21.174C53.0398 20.712 53.0818 20.271 53.1658 19.83L53.8798 14.916C53.9008 14.79 53.9848 14.727 54.1108 14.727H56.6728C56.8198 14.727 56.8828 14.811 56.8618 14.958L54.6778 25.311C54.6568 25.437 54.5728 25.5 54.4468 25.5H51.3178C51.1918 25.5 51.1078 25.437 51.0868 25.311L50.1208 20.082L49.8898 18.633C49.8688 18.444 49.6588 18.444 49.6378 18.633L49.4068 20.103L48.5458 25.311C48.5248 25.437 48.4408 25.5 48.3148 25.5H45.2068C45.0808 25.5 44.9968 25.437 44.9758 25.311L42.8128 14.958C42.7918 14.811 42.8548 14.727 43.0018 14.727H45.9628C46.0888 14.727 46.1728 14.79 46.1938 14.916L46.9288 19.83C47.0128 20.271 47.0758 20.754 47.1388 21.195C47.2018 21.51 47.4748 21.531 47.5378 21.195L47.7478 19.872L48.6088 14.916C48.6298 14.79 48.7138 14.727 48.8398 14.727H51.3808ZM61.1582 25.29C61.1582 25.416 61.0742 25.5 60.9482 25.5H58.0292C57.9032 25.5 57.8192 25.416 57.8192 25.29V14.937C57.8192 14.811 57.9032 14.727 58.0292 14.727H60.9482C61.0742 14.727 61.1582 14.811 61.1582 14.937V25.29ZM59.4572 13.74C58.3442 13.74 57.5882 12.942 57.5882 11.934C57.5882 10.926 58.3442 10.107 59.4572 10.107C60.5492 10.107 61.3052 10.926 61.3052 11.934C61.3052 12.942 60.5492 13.74 59.4572 13.74ZM62.8154 14.727C63.2144 14.727 63.3194 14.538 63.3614 14.055L63.5084 12.039C63.5084 11.913 63.6134 11.829 63.7394 11.829H66.2804C66.4064 11.829 66.4904 11.913 66.4904 12.039V14.517C66.4904 14.643 66.5744 14.727 66.7004 14.727H68.6744C68.8004 14.727 68.8844 14.811 68.8844 14.937V16.659C68.8844 16.785 68.8004 16.869 68.6744 16.869H66.4694V22.056C66.4694 22.875 66.9314 23.085 67.4564 23.085C67.8764 23.085 68.3384 22.938 68.7164 22.707C68.8634 22.623 68.9684 22.665 68.9684 22.833V24.828C68.9684 24.933 68.9264 25.017 68.8424 25.08C68.2334 25.458 67.3724 25.71 66.4274 25.71C64.6844 25.71 63.1304 24.912 63.1304 22.476V16.869H62.2484C62.1224 16.869 62.0384 16.785 62.0384 16.659V14.937C62.0384 14.811 62.1224 14.727 62.2484 14.727H62.8154ZM73.4298 16.323C73.4298 16.638 73.7868 16.68 73.9128 16.407C74.3748 15.315 75.1308 14.496 76.6008 14.496C78.2178 14.496 78.9528 15.609 78.9528 17.373V25.29C78.9528 25.416 78.8688 25.5 78.7428 25.5H75.8238C75.6978 25.5 75.6138 25.416 75.6138 25.29V18.633C75.6138 17.709 75.2778 17.268 74.5848 17.268C73.8708 17.268 73.4298 17.709 73.4298 18.633V25.29C73.4298 25.416 73.3458 25.5 73.2198 25.5H70.3008C70.1748 25.5 70.0908 25.416 70.0908 25.29V10.548C70.0908 10.422 70.1748 10.338 70.3008 10.338H73.2198C73.3458 10.338 73.4298 10.422 73.4298 10.548V16.323Z' fill='white'/%3E%3Cpath d='M100.132 16.3203C105.58 17.3761 107.272 22.4211 107.318 27.4961C107.318 27.6101 107.226 27.7041 107.112 27.7041H100.252C100.138 27.7041 100.046 27.6121 100.046 27.5001C100.026 23.5629 99.3877 20.0896 95.4865 19.9396C95.3705 19.9356 95.2725 20.0276 95.2725 20.1456V27.5001C95.2725 27.6141 95.1806 27.7061 95.0666 27.7061H88.206C88.092 27.7061 88 27.6141 88 27.5001V8.75585C88 8.64187 88.092 8.54989 88.206 8.54989H95.0686C95.1826 8.54989 95.2745 8.64187 95.2745 8.75585V15.7764C95.2745 15.8804 95.3585 15.9644 95.4625 15.9644C95.5445 15.9644 95.6185 15.9104 95.6425 15.8324C97.4081 10.0416 100.709 8.58588 106.07 8.55189C106.184 8.55189 106.276 8.64387 106.276 8.75785V15.7604C106.276 15.8744 106.184 15.9664 106.07 15.9664H100.166C100.066 15.9664 99.9856 16.0464 99.9856 16.1464C99.9856 16.2304 100.048 16.3043 100.132 16.3203ZM118.918 20.7095V16.1704C118.918 16.0564 119.01 15.9644 119.124 15.9644H124.173C124.273 15.9644 124.353 15.8844 124.353 15.7844C124.353 15.6985 124.291 15.6245 124.207 15.6085C120.256 14.8246 118.432 12.5511 118.37 8.75585C118.368 8.64387 118.458 8.54989 118.572 8.54989H125.986C126.1 8.54989 126.192 8.64187 126.192 8.75585V11.9532C126.192 12.0672 126.284 12.1592 126.398 12.1592H130.649C130.763 12.1592 130.855 12.2511 130.855 12.3651V15.7624C130.855 15.8764 130.763 15.9684 130.649 15.9684H126.398C126.284 15.9684 126.192 16.0604 126.192 16.1744V19.8356C126.192 21.1294 126.986 21.5553 128.04 21.5553C129.692 21.5553 131.323 20.8114 131.977 20.4735C132.113 20.4035 132.277 20.5015 132.277 20.6555V26.3543C132.277 26.5063 132.193 26.6463 132.059 26.7183C131.413 27.0582 129.418 28 127.136 28C122.435 27.996 118.918 26.0824 118.918 20.7095ZM109.266 27.4981V16.1704C109.266 16.0564 109.358 15.9644 109.472 15.9644H116.334C116.448 15.9644 116.54 16.0564 116.54 16.1704V27.4981C116.54 27.6121 116.448 27.7041 116.334 27.7041H109.472C109.358 27.7021 109.266 27.6101 109.266 27.4981ZM108.876 11.4913C108.876 13.4189 110.238 14.9826 112.853 14.9826C115.469 14.9826 116.83 13.4189 116.83 11.4913C116.83 9.56369 115.471 8 112.853 8C110.238 8 108.876 9.56369 108.876 11.4913Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-9188a13de6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-9188a13de6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="9188a13de6"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="9188a13de6"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;}.formkit-form[data-uid="9188a13de6"] .formkit-modal.guard{max-width:420px;width:100%;} .formkit-form[data-uid="9188a13de6"]{border:1px solid #e3e3e3;max-width:700px;position:relative;overflow:hidden;}.formkit-form[data-uid="9188a13de6"] .formkit-background{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;opacity:0.3;}.formkit-form[data-uid="9188a13de6"] [data-style="minimal"]{padding:20px;width:100%;position:relative;}.formkit-form[data-uid="9188a13de6"] .formkit-header{margin:0 0 27px 0;text-align:center;}.formkit-form[data-uid="9188a13de6"] .formkit-subheader{margin:18px 0;text-align:center;}.formkit-form[data-uid="9188a13de6"] .formkit-guarantee{font-size:13px;margin:10px 0 15px 0;text-align:center;}.formkit-form[data-uid="9188a13de6"] .formkit-guarantee > p{margin:0;}.formkit-form[data-uid="9188a13de6"] .formkit-powered-by-convertkit-container{margin-bottom:0;}.formkit-form[data-uid="9188a13de6"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:25px auto 0 auto;}.formkit-form[data-uid="9188a13de6"] .formkit-field{min-width:220px;}.formkit-form[data-uid="9188a13de6"] .formkit-field,.formkit-form[data-uid="9188a13de6"] .formkit-submit{margin:0 0 15px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}.formkit-form[data-uid="9188a13de6"][min-width~="600"] [data-style="minimal"]{padding:40px;}.formkit-form[data-uid="9188a13de6"][min-width~="600"] .formkit-fields[data-stacked="false"]{margin-left:-5px;margin-right:-5px;}.formkit-form[data-uid="9188a13de6"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="9188a13de6"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 5px 15px 5px;}.formkit-form[data-uid="9188a13de6"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto;-ms-flex:100 1 auto;flex:100 1 auto;}.formkit-form[data-uid="9188a13de6"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;} </style></form>
+      </div>
+    </aside>
+
+</div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="mb-24 mx-2 md:mx-4 py-2 lg:mx-auto lg:container">
+    <div class="space-y-1 md:flex md:space-y-0 items-center justify-between flex-row-reverse">
+  <p class="text-base text-stone-600">
+    Maintained by <a class="text-stone-600 hover:text-orange-600 font-bold" href="https://www.julienbourdeau.com">Julien Bourdeau</a>
+  </p>
+
+  <p class="text-sm text-stone-400">
+    <a class="font-medium" href="https://debugbar.dev">debugbar.dev</a> is built with <a href="https://jigsaw.tighten.co">Jigsaw</a>, <a href="https://tailwindcss.com/">Tailwind</a> and
+    <a href="https://torchlight.dev/">Torchlight</a>.
+  </p>
+</div>
+  </footer>
+
+
+
+    <div id="__debugbar"></div>
+
+    <script defer src="/assets/debugbar/debugbar-m7sX7KV1.js"></script>
+
+    <script type="text/javascript">
+      window._debugbarConfigOptions = {mode: 'offline', height: 540}
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MCX1TNRYH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MCX1TNRYH1');
+</script>
+
+  </body>
+</html>
