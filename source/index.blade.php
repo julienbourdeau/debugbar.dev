@@ -15,7 +15,7 @@ seo_title: "Debugbar: Powerful devtools for Ruby on Rails"
       <div class="mt-10 flex items-center justify-center gap-x-6">
 
         <button class="try-button"
-                onclick="document.querySelector('#__debugbar-shadow-root').shadowRoot.querySelector('#debubgbar-header > div:nth-child(1) > div > button:nth-child(4)').click()"
+                onclick="document.querySelector('#__debugbar-shadow-root').shadowRoot.querySelector('#debugbar-header > div.flex.grow > button:nth-child(4)').click()"
         >
 
           <span class="text inline-flex items-center gap-x-1.5">
