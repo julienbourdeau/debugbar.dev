@@ -1,6 +1,6 @@
 /* Shiki code block styling (replaces Torchlight) */
 pre {
-  @apply !p-0 !my-2 !bg-transparent rounded overflow-x-auto shadow-sm border border-gray-200 font-mono text-base;
+  @apply p-0! my-2! bg-transparent! rounded-sm overflow-x-auto shadow-xs border border-gray-200 font-mono text-base;
 }
 
 pre > code {
