@@ -1,10 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import { fetchChangelog } from '../lib/build-helpers';
-import { marked } from 'marked';
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+
+const processor = await createMarkdownProcessor({
+  shikiConfig: { theme: 'github-light' },
+});
 
 const changelog = await fetchChangelog();
-const html = await marked(changelog);
+const { code: html } = await processor.render(changelog);
 ---
 
 <Base seoTitle="Rails Debugbar Changelog" seoDescription="All new features, improvements and fixes in Debugbar and more importantly: all the breaking changes!">

@@ -8,14 +8,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.7.10",
     "@astrojs/tailwind": "^6.0.2",
-    "tailwindcss": "^3.4.17",
-    "alpinejs": "^3.14.9",
-    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/alpinejs": "^3.13.11",
-    "marked": "^15.0.7",
-    "sharp": "^0.33.5"
+    "alpinejs": "^3.14.9",
+    "astro": "^5.7.10",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.17"
   }
 }
