@@ -24,7 +24,7 @@ Debugbar.configure do |config|
 end
 ```
 
-Second, you need to configure the logger manually. This is the part that I'm hoping to be able to do automcatically in the future.
+Second, you need to configure the logger manually. This is the part that I'm hoping to be able to do automatically in the future.
 
 ```ruby
 # config/environments/development.rb

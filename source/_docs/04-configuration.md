@@ -14,7 +14,7 @@ There are a few things you can configure in the Debugbar. The configuration happ
 
 ### Ensure ruby configuration is only loaded in development
 
-Because the debugbar should be loaded in other environments, you should ensure the configuration is only loaded in development.
+Because the debugbar shouldn't be loaded in other environments, you should ensure the configuration is only loaded in development.
 One solution is to put the configuration directly in `config/environments/development.rb`, underneath the `Rails.application.configure do` block.
 
 ```ruby
@@ -84,7 +84,7 @@ end
 
 ## Enable/disable a feature
 
-This is showed in the features] section, but generally, you can enable/disable a feature in the initializer.
+This is shown in the [features] section, but generally, you can enable/disable a feature in the initializer.
 By default, all features are enabled if the underlying module is available. For example, Active Record is enabled if the `ActiveRecord` module is available.
 
 ```ruby
@@ -117,7 +117,7 @@ window._debugbarConfigOptions = {
 
 ### Using SSL
 
-The configuration requires you to pass the entire URL so if you use SSL locally, so you can to use `wss` instead of `ws`. Us
+The configuration requires you to pass the entire URL, so if you use SSL locally, you can use `wss` instead of `ws`.
 
 ```erb
 <%= debugbar_body  cable: {url: "wss://localhost:3000"} %>
@@ -170,7 +170,7 @@ If you prefer, the debugbar can load minimized by default, so you just see the l
 ## Frontend configuration without the helper
 
 If you are [not using the ERB view helper](https://debugbar.dev/docs/installation/) to render the debugbar 
-(typically because you have an SPA and the shell isn't rendered by Rails), there are some configuration that will might be missing.
+(typically because you have an SPA and the shell isn't rendered by Rails), there is some configuration that might be missing.
 
 ```html
 <script type="text/javascript" data-turbo-permanent>

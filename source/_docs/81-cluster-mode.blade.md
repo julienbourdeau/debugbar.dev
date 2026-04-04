@@ -12,7 +12,7 @@ It's recommended to use the debugbar with an application server running into a s
 If for some reason, you're stuck with using cluster mode in dev, this feature is for you. I guess one good reason
 to run in cluster mode in dev is to be as close as possible as production.
 
-By default, all requests made are stored in memory. Once you have multiple processes, each processes hold their own list of requests and isolated memories.
+By default, all requests made are stored in memory. Once you have multiple processes, each process holds its own list of requests and isolated memory.
 We need to store requests somewhere shared. The debugbar relies on `Rails.cache` to share the list. Keep in mind that if you're using the memory store, 
 you'll run into the same issue! Feel free to use any persistent cache store like Redis, Memcache, SolidCable or simply the file store.
 

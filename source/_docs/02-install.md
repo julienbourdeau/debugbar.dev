@@ -70,7 +70,7 @@ Note that if you changed the route prefix in your configuration, you'll need to 
 
 ## Puma configuration
 
-**It's recommended to run Puma in single mode**! Rails use single mode by default in dev but if you
+**It's recommended to run Puma in single mode**! Rails uses single mode by default in dev but if you
 modified it, set `WEB_CONCURRENCY` env var to 0. Puma cluster mode [requires extra configuration](/docs/puma-cluster-mode).
 
 ## Troubleshooting

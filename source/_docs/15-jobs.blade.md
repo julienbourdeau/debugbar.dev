@@ -2,7 +2,7 @@
 slug: "jobs"
 toc_section: "Features"
 title: 'Jobs'
-subtitle: "Show what jobs where enqueued in the Rails debugbar"
+subtitle: "Show what jobs were enqueued in the Rails debugbar"
 seo_title:
 seo_description: 
 ---

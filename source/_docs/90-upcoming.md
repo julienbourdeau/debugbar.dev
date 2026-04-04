@@ -13,8 +13,8 @@ I think it's too much hassle to add the debugbar in your frontend. Other tools l
 
 ## Running the debugbar in production or staging
 
-One of the next feature I want to add is how to run the debugbar in production or staging.
-It should be ignored for all request not coming from authorized users. If ignored, there should be no performance impact.
+One of the next features I want to add is how to run the debugbar in production or staging.
+It should be ignored for all requests not coming from authorized users. If ignored, there should be no performance impact.
 
 Running the debugbar in production will let you explore your application with real data!
 
@@ -33,4 +33,4 @@ I'm not sure yet what there is to do here, but I'm super excited about Hotwire, 
 
 ### Sidekiq
 
-Active Job is super easy to support because there is an event dispatched. To support Sidekiq, I'll need to monkey patch the `perform_async` method (and related methods). I have POC working, but I need to make sure it's not too invasive.
+Active Job is super easy to support because there is an event dispatched. To support Sidekiq, I'll need to monkey patch the `perform_async` method (and related methods). I have a POC working, but I need to make sure it's not too invasive.

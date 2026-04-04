@@ -13,10 +13,10 @@ The debugbar is organized in 2 main parts:
 
 ## The full cycle
 
-Generally speaking, the debugbar works like this. Remember that you need to include the debubar view in your layout.
+Generally speaking, the debugbar works like this. Remember that you need to include the debugbar view in your layout.
 
 1. In your browser, you load the first page of your app.
-2. The request goes through the all the Rack middleware, including the debugbar middleware.
+2. The request goes through all the Rack middleware, including the debugbar middleware.
 3. This triggers the gem to start tracking the request.
 4. On its way out, the response also goes back through all the Rack middleware.
 5. At this point, we store what we collected. Nothing is sent in this response.
