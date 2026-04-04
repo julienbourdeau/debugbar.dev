@@ -17,7 +17,7 @@ const { title, subtitle, tocSection, seoTitle, seoDescription, currentSlug } = A
 <Base title={title} seoTitle={seoTitle} seoDescription={seoDescription}>
 
   <div class="space-y-12 lg:flex lg:justify-between lg:space-y-0">
-    <aside x-data="{ tocOpen: false }" id="docs-table-of-content" class="shadow-lg p-3 border lg:border-0 lg:min-w-64 lg:mr-20 lg:shadow-none">
+    <aside x-data="{ tocOpen: false }" id="docs-table-of-content" class="shadow p-3 border lg:border-0 lg:min-w-64 lg:mr-20 lg:shadow-none">
       <h2 @click="tocOpen = true" class="cursor-pointer lg:cursor-auto text-xl font-semibold leading-10">Table of contents</h2>
 
       <div x-show="tocOpen" @click.away="tocOpen = false" class="lg:hidden">
@@ -40,7 +40,7 @@ const { title, subtitle, tocSection, seoTitle, seoDescription, currentSlug } = A
           )}
         </header>
 
-        <div class="prose lg:prose-lg prose-stone max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-stone-500 prose-a:font-semibold hover:prose-a:[--tw-prose-underline-size:6px] prose-pre:rounded-xl prose-pre:bg-stone-900 prose-pre:shadow-lg">
+        <div class="prose lg:prose-lg prose-stone max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-stone-500 prose-a:font-semibold hover:prose-a:[--tw-prose-underline-size:6px] prose-pre:rounded-xl prose-pre:bg-stone-900 prose-pre:shadow">
 
           <slot />
 
