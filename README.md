@@ -1,15 +1,12 @@
 ## Debugbar.dev website
 
-
-
 This site is built with:
-* [Jigsaw](http://jigsaw.tighten.co/), a static site generator for Laravel.
+* [Astro](https://astro.build/), a static site generator.
 * [Tailwind CSS](https://tailwindcss.com/), a utility-first CSS framework.
 * [Alpine.js](https://alpinejs.dev/), a minimal framework for composing JavaScript behavior in your markup.
-* [Torchlight](https://torchlight.dev/), a code highlighting tool.
+* [Shiki](https://shiki.style/), for code syntax highlighting (built into Astro).
 
-When new changes are pushed to the main branch, a [GitHub Action](.github/workflows/deploy.yml) is triggered to build the site 
-and deploy it to the `static` branch. This branch is then deployed on [CloudFlare Pages](https://pages.cloudflare.com/).
+The site is deployed on [CloudFlare Pages](https://pages.cloudflare.com/) which auto-deploys on push to `master`.
 
 ---
 
@@ -17,4 +14,4 @@ and deploy it to the `static` branch. This branch is then deployed on [CloudFlar
 
 ---
 
-[![Hero image](./source/assets/debugbar-graph-img.png?raw=true "The debugbar.dev documentation website")]((https://debugbar.dev))
+[![Hero image](./public/assets/debugbar-graph-img.png?raw=true "The debugbar.dev documentation website")](https://debugbar.dev)

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { fetchChangelog } from '../lib/build-helpers';
+import { marked } from 'marked';
+
+const changelog = await fetchChangelog();
+const html = await marked(changelog);
+---
+
+<Base seoTitle="Rails Debugbar Changelog" seoDescription="All new features, improvements and fixes in Debugbar and more importantly: all the breaking changes!">
+
+  <div class="prose max-w-none">
+
+    <Fragment set:html={html} />
+
+  </div>
+
+</Base>

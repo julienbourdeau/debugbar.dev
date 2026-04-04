@@ -1,0 +1,54 @@
+---
+import Seo from '../components/Seo.astro';
+import Analytics from '../components/Analytics.astro';
+import { getDebugbarJsFilename } from '../lib/build-helpers';
+import '../styles/main.css';
+
+interface Props {
+  title?: string;
+  seoTitle?: string;
+  description?: string;
+  seoDescription?: string;
+}
+
+const { title, seoTitle, description, seoDescription } = Astro.props;
+const debugbarJs = await getDebugbarJsFilename();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="75x75" href="/assets/favicon.png">
+    <link rel="icon" href="/assets/favicon.svg">
+    <link rel="mask-icon" href="/assets/favicon.svg" color="#f1f0ee">
+
+    <Seo title={title} seoTitle={seoTitle} description={description} seoDescription={seoDescription} />
+
+    <script>
+      import Alpine from 'alpinejs';
+      window.Alpine = Alpine;
+      Alpine.start();
+    </script>
+  </head>
+
+  <body class="bg-almost-white bg-pattern text-stone-900 font-sans antialiased">
+
+    <div class="h-2 bg-gradient-to-r from-transparent from-10% via-orange-200 via-30% to-amber-600 to-90%"></div>
+
+    <slot />
+
+    <div id="__debugbar"></div>
+
+    <script defer src={`/assets/debugbar/${debugbarJs}`} is:inline></script>
+
+    <script is:inline>
+      window._debugbarConfigOptions = {mode: 'offline', height: 540}
+    </script>
+
+    <Analytics />
+
+  </body>
+</html>

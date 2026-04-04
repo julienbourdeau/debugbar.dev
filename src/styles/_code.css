@@ -1,0 +1,19 @@
+/* Shiki code block styling (replaces Torchlight) */
+pre {
+  @apply !p-0 !my-2 !bg-transparent rounded overflow-x-auto shadow border border-gray-200 font-mono text-base;
+}
+
+pre > code {
+  @apply block py-4 min-w-max;
+}
+
+pre > code .line {
+  @apply px-4 py-0.5;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Shiki github-light theme background override */
+pre.astro-code {
+  background-color: #fafafa !important;
+}

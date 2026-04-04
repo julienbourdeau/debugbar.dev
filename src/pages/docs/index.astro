@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const docs = await getCollection('docs');
+const sorted = docs.sort((a, b) => a.id.localeCompare(b.id));
+
+// Group by toc_section
+const grouped = new Map<string, typeof sorted>();
+for (const doc of sorted) {
+  const section = doc.data.toc_section;
+  if (!grouped.has(section)) {
+    grouped.set(section, []);
+  }
+  grouped.get(section)!.push(doc);
+}
+---
+
+<Base seoTitle="Debugbar Documentation: Powerful devtools for Ruby on Rails">
+
+  <div class="w-full prose prose-stone">
+    <h1>Documentation</h1>
+    <p>The debugbar is a gem you install in your Rails project. You can test it on this website, at the bottom of the page. This project is inspired by what you get in the PHP world, with the
+      <a href="https://github.com/barryvdh/laravel-debugbar">Laravel debugbar</a> for instance.</p>
+
+    <div class="mt-6 max-w-[80%] flex md:items-center space-y-4 md:space-y-0 md:space-x-6 flex-col justify-start md:flex-row">
+      <a href="/docs/installation" class="no-underline rounded-md bg-stone-100 px-2.5 py-1.5 text-sm font-semibold text-stone-600 shadow-md hover:bg-stone-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600">
+        Getting Started
+      </a>
+      <a href="/docs/how-it-works" class="no-underline rounded-md bg-stone-100 px-2.5 py-1.5 text-sm font-semibold text-stone-600 shadow-md hover:bg-stone-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600">
+        How It Works
+      </a>
+      <a target="_blank" href="https://github.com/julienbourdeau/debugbar" class="no-underline inline-flex items-center gap-x-1.5 rounded-md bg-stone-100 px-2.5 py-1.5 text-sm font-semibold text-stone-600 shadow-md hover:bg-stone-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600">
+        Source Code
+        <svg class="-ml-0.5 size-4" data-slot="icon" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"></path>
+          <path d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"></path>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="mt-20">
+    <h2 class="text-2xl font-bold">Table of content</h2>
+
+    <div class="mt-6 space-y-6 md:space-y-0 md:flex md:flex-wrap md:justify-between">
+
+      {[...grouped.entries()].map(([name, items]) => (
+        <div>
+          <h3 class="mb-2.5 font-semibold text-lg">{name}</h3>
+
+          <ul class="space-y-1.5">
+            {items.map((p) => (
+              <li>
+                {p.data.disabled ? (
+                  <span>{p.data.title}</span>
+                ) : (
+                  <a href={`/docs/${p.data.slug}`} class="hover:text-orange-600">{p.data.title}</a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+    </div>
+  </div>
+
+</Base>

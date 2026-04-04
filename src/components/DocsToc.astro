@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const docs = await getCollection('docs');
+
+// Sort by filename (which has numeric prefix for ordering)
+const sorted = docs.sort((a, b) => a.id.localeCompare(b.id));
+
+// Group by toc_section
+const grouped = new Map<string, typeof sorted>();
+for (const doc of sorted) {
+  const section = doc.data.toc_section;
+  if (!grouped.has(section)) {
+    grouped.set(section, []);
+  }
+  grouped.get(section)!.push(doc);
+}
+---
+
+<nav class="mt-6">
+  {[...grouped.entries()].map(([name, items]) => (
+    <Fragment>
+      <h3 class="font-display text-sm font-semibold leading-6">{name}</h3>
+
+      <ul role="list" class="mt-2 mb-3 space-y-2 border-l-2 border-stone-100 lg:mt-4 lg:mb-6 lg:space-y-4 lg:border-stone-200">
+        {items.map((p) => (
+          <li class="relative">
+            {p.data.disabled ? (
+              <span class="cursor-not-allowed block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-stone-700 before:bg-stone-300 hover:before:block before:hidden">
+                {p.data.title}
+              </span>
+            ) : (
+              <a href={`/docs/${p.data.slug}`}
+                 class:list={[
+                   'block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-stone-700 before:bg-stone-300 hover:text-stone-800 hover:before:block',
+                   currentSlug === p.data.slug ? 'font-semibold before:block' : 'before:hidden',
+                 ]}>
+                {p.data.title}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </Fragment>
+  ))}
+</nav>

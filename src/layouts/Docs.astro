@@ -1,0 +1,52 @@
+---
+import Base from './Base.astro';
+import DocsToc from '../components/DocsToc.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  tocSection: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  currentSlug: string;
+}
+
+const { title, subtitle, tocSection, seoTitle, seoDescription, currentSlug } = Astro.props;
+---
+
+<Base title={title} seoTitle={seoTitle} seoDescription={seoDescription}>
+
+  <div class="space-y-12 lg:flex lg:justify-between lg:space-y-0">
+    <aside x-data="{ tocOpen: false }" id="docs-table-of-content" class="shadow-lg p-3 border lg:border-0 lg:min-w-64 lg:mr-20 lg:shadow-none">
+      <h2 @click="tocOpen = true" class="cursor-pointer lg:cursor-auto text-xl font-semibold leading-10">Table of contents</h2>
+
+      <div x-show="tocOpen" @click.away="tocOpen = false" class="lg:hidden">
+        <DocsToc currentSlug={currentSlug} />
+      </div>
+
+      <div class="hidden lg:block">
+        <DocsToc currentSlug={currentSlug} />
+      </div>
+
+    </aside>
+
+    <div class="w-full">
+      <article>
+        <header class="mb-12 space-y-1">
+          <p class="font-display text-sm font-medium text-orange-600">{tocSection}</p>
+          <h1 class="font-display text-4xl font-bold tracking-tight text-stone-900">{title}</h1>
+          {subtitle && (
+            <h2 class="font-display text-lg tracking-tight text-stone-600">{subtitle}</h2>
+          )}
+        </header>
+
+        <div class="prose lg:prose-lg prose-stone max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-stone-500 prose-a:font-semibold hover:prose-a:[--tw-prose-underline-size:6px] prose-pre:rounded-xl prose-pre:bg-stone-900 prose-pre:shadow-lg">
+
+          <slot />
+
+        </div>
+      </article>
+    </div>
+  </div>
+
+</Base>
